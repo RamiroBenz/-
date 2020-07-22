@@ -1,0 +1,62 @@
+body {
+	background-color: #F1F3F3;
+	font-family: helvetica bold;
+	font-size: 15px;
+}
+
+input {
+	border: white;
+	font-size: 15px;
+}
+
+.remito {
+	width: 80%;
+	
+	flex-wrap: wrap;
+}
+#frmFactura{
+	padding-right: 30px;
+}
+
+.cabecera {
+	text-align: right;
+	
+	padding-right: 250px;
+}
+#detalle {
+	
+}
+.contenedor {
+	
+	display: flex;
+	justify-content: space-around;
+}
+.izquierda {
+	padding-left: 100px; 
+	
+}
+.derecha {
+	
+	
+}
+.observaciones {
+	font-size: 20px;
+}
+.nover {
+	color:white;
+	padding-left: 200px;
+}
+.oc{
+	margin-left: 120px;
+	font-size: 20px;
+	padding-left: 100px;
+	font-family: sans-serif;
+}
+.center {
+	text-align: center;
+	padding-left: 80px;
+}
+.invisible{
+	color: white;
+	font-size: 12px;
+}

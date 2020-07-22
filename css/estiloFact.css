@@ -1,0 +1,114 @@
+element.style {
+    width: 150px;
+    font-weight: bold;
+}
+jig.css?v=20151216:181
+input:focus, select:focus {
+    border: 1px solid #EAEEF5;
+    box-shadow: 0 0px 5px #EAEEF5;
+    -webkit-box-shadow: 0 0px 7px #EAEEF5;
+    outline: none;
+}
+jig_old.css:560
+input, select, textarea {
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+user agent stylesheet
+input[type="button" i]:focus, input[type="checkbox" i]:focus, input[type="file" i]:focus, input[type="hidden" i]:focus, input[type="image" i]:focus, input[type="radio" i]:focus, input[type="reset" i]:focus, input[type="submit" i]:focus, input[type="file" i]:focus::-webkit-file-upload-button {
+    outline-offset: 0px;
+}
+user agent stylesheet
+input[type="button" i], input[type="submit" i], input[type="reset" i], input[type="file" i]::-webkit-file-upload-button, button {
+    padding: 1px 6px;
+}
+user agent stylesheet
+input:focus, textarea:focus, select:focus {
+    outline-offset: -2px;
+}
+user agent stylesheet
+input[type="button" i], input[type="submit" i], input[type="reset" i], input[type="file" i]::-webkit-file-upload-button, button {
+    align-items: flex-start;
+    text-align: center;
+    cursor: default;
+    color: buttontext;
+    background-color: buttonface;
+    box-sizing: border-box;
+    padding: 2px 6px 3px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: #EAEEF5;
+    border-image: initial;
+}
+user agent stylesheet
+input[type="button" i], input[type="submit" i], input[type="reset" i] {
+    -webkit-appearance: push-button;
+    user-select: none;
+    white-space: pre;
+}
+user agent stylesheet
+:focus {
+    outline: -webkit-focus-ring-color auto 5px;
+}
+user agent stylesheet
+input {
+    -webkit-appearance: textfield;
+    background-color: white;
+    -webkit-rtl-ordering: logical;
+    user-select: text;
+    cursor: auto;
+    padding: 1px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: #EAEEF5;
+    border-image: initial;
+}
+user agent stylesheet
+input, textarea, select, button {
+    text-rendering: auto;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    margin: 0em;
+    font: 13.3333px Arial;
+}
+user agent stylesheet
+input, textarea, select, button, meter, progress {
+    -webkit-writing-mode: horizontal-tb;
+}
+Inherited from div#contenido
+jig.css?v=20151216:132
+#contenido {
+    width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #FCFCFC;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px #555;
+    text-align: center;
+    display: table;
+    /* background: linear-gradient(135deg, #FCFCFC 0%,#FCFCFC 70%,#DDD 100%); */
+}
+Inherited from body
+jig.css?v=20151216:5
+body {
+    font: 62.5% "Trebuchet MS",sans-serif;
+    margin: 0px;
+    /* background-color: #999; */
+    background-color: #90CAF9;
+}
+
+
+element.style {
+}
+
+user agent stylesheet
+head {
+    display: none;
+}
