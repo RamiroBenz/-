@@ -1,0 +1,511 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:pt="http://xmlns.jcp.org/jsf/passthrough" lang="es" xml:lang="es" class=" js ">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<link type="text/css" rel="stylesheet" href="/contribuyente_/javax.faces.resource/theme.css.xhtml?ln=primefaces-aristo">
+		<script type="text/javascript" src="/contribuyente_/javax.faces.resource/jquery/jquery.js.xhtml?ln=primefaces&amp;v=5.3">
+		</script>
+		<link type="text/css" rel="stylesheet" href="/contribuyente_/javax.faces.resource/reset.css.xhtml?ln=css">
+		<link type="text/css" rel="stylesheet" href="/contribuyente_/javax.faces.resource/esqueleto.css.xhtml?ln=css">
+		<link type="text/css" rel="stylesheet" href="/contribuyente_/javax.faces.resource/estilosGenericos.css.xhtml?ln=css">
+		<link type="text/css" rel="stylesheet" href="/contribuyente_/javax.faces.resource/accordion.css.xhtml?ln=css">
+		<link type="text/css" rel="stylesheet" href="/contribuyente_/javax.faces.resource/jquery.jscrollpane.css.xhtml?ln=css">
+		<link type="text/css" rel="stylesheet" href="/contribuyente_/javax.faces.resource/container.css.xhtml?ln=css">
+		<link type="text/css" rel="stylesheet" href="/contribuyente_/javax.faces.resource/tabsInterno.css.xhtml?ln=css">
+		<script type="text/javascript" src="/contribuyente_/javax.faces.resource/modernizr.custom.js.xhtml?ln=javascript">
+		</script>
+		<link type="text/css" rel="stylesheet" href="/contribuyente_/javax.faces.resource/jquery-ui-1.11.4.css.xhtml?ln=css">
+		<script type="text/javascript" src="/contribuyente_/javax.faces.resource/jquery.bpopup.min.js.xhtml?ln=javascript">
+		</script>
+		<link type="text/css" rel="stylesheet" href="/contribuyente_/javax.faces.resource/modal.css.xhtml?ln=css">
+		<link type="text/css" rel="stylesheet" href="/contribuyente_/javax.faces.resource/acordion.css.xhtml?ln=css">
+		<link type="text/css" rel="stylesheet" href="/contribuyente_/javax.faces.resource/menu.css.xhtml?ln=css">
+		<script type="text/javascript" src="/contribuyente_/javax.faces.resource/script.js.xhtml?ln=javascript"></script>
+		<script type="text/javascript" src="/contribuyente_/javax.faces.resource/hide.js.xhtml?ln=javascript">
+		</script>
+		<link type="text/css" rel="stylesheet" href="/contribuyente_/javax.faces.resource/royalslider.css.xhtml?ln=css">
+		<link type="text/css" rel="stylesheet" href="/contribuyente_/javax.faces.resource/iskin.css.xhtml?ln=css">
+		<link type="text/css" rel="stylesheet" href="/contribuyente_/javax.faces.resource/slider-home.css.xhtml?ln=css">
+		<link type="text/css" rel="stylesheet" href="/contribuyente_/javax.faces.resource/cbpHorizontalMenu.css.xhtml?ln=css">
+		<link type="text/css" rel="stylesheet" href="/contribuyente_/javax.faces.resource/header.css.xhtml?ln=css">
+		<script type="text/javascript" src="/contribuyente_/javax.faces.resource/jquery-ui-1.11.4.min.js.xhtml?ln=javascript">
+		</script>
+		<script type="text/javascript">
+		if(window.PrimeFaces){}</script>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="refresh" content="900;url=login.xhtml">
+	<meta http-equiv="CACHE-CONTROL" content="NO-CACHE">
+	<meta http-equiv="PRAGMA" content="NO-CACHE">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="keywords" content="Clave FIscal, , AFIP, Impuestos, Impositiva, Aduana, Seguridad Social, Administracin Federal ">
+	<meta name="author" content="Administracin Federal">
+
+	<title>Clave FIscal | AFIP - Administración Federal de Ingresos
+		Publicos</title>
+	<link rel="shortcut icon" type="image/x-icon" href="/contribuyente_/images/favicon.ico">
+	<!-- &lt;link
+		href='//fonts.googleapis.com/css?family=Open+Sans:100,300,400,700,800'
+		rel='stylesheet' type='text/css' /&gt; -->
+	<!-- &lt;h:outputScript library="javascript" name="jquery-1.12.4.min.js" target="head" /&gt; -->
+	<script type="text/javascript" language="javascript">
+	    $(function () {
+	        $("#requisitos").click(function () {
+	            //mostrarAlert( "Handler for .click() called." );
+	            $(document).scrollTop(0);
+	        });
+	        $('div.acordion:eq(0)').find('div.expand:eq(0)').addClass('openAd').end()
+	        .find('div.collapse:gt(0)').hide().end()
+	        .find('div.expand').click(function () {
+	            $(this).toggleClass('openAd').siblings().removeClass('openAd').end()
+	            .next('div.collapse').slideToggle().siblings('div.collapse:visible').slideUp();
+	            return false;
+	        });
+	    })
+	</script>
+
+	<script type="text/javascript" language="javascript">
+		$(function () {
+			$('div.acordion00:eq(0)')
+			.find('div.collapse').hide().end()
+			.find('div.expand').click(function () {
+				$(this).toggleClass('openAd').siblings().removeClass('openAd').end()
+				.next('div.collapse').slideToggle().siblings('div.collapse:visible').slideUp();
+				return false;
+			});
+		})
+	</script>
+
+	<script>
+
+		$( document ).ready( function () {
+	 		$( "table tr:first-child" ).addClass( "gris" ); 
+		});
+	</script>
+	</head>
+
+	<body>
+
+	
+ 	
+
+	<div id="header">
+		<div class="container">
+			<div class="hidden headerIn">
+				<div class="logo table-cell middle" style="width: 50% !important">
+					<a id="AFIP" href="http://www.afip.gob.ar/sitio/externos/"><img src="images/afip.png" alt="Logo AFIP"></a>
+				</div>
+		<form id="ajaxForm" name="ajaxForm" method="post" action="/contribuyente_/menu.xhtml" enctype="application/x-www-form-urlencoded">
+		<input type="hidden" name="ajaxForm" value="ajaxForm">
+
+
+					<div class="table-cell textRight floatRight margin-10 block middle" style="width: 100%; height: 100%;"><input id="ajaxForm:nom" type="hidden" name="ajaxForm:nom" value="BENZACAR EDUARDO ALBERTO">
+						<div id="nombre">
+							<p class="bolder font-size-15 margin-0 uppercase">BENZACAR EDUARDO ALBERTO
+							</p>
+						</div>
+						<div id="cuil">
+							<p class="font-size-13 margin-0 uppercase gris">CUIT: 20-08362194-0
+							</p>
+						</div>
+						<p class="font-size-11 margin-0 uppercase gris">Clave Fiscal
+							Nivel: 3</p>
+						<div id="tipoContribuyente">
+							<p class="font-size-11 margin-0 uppercase gris">
+							</p>
+						</div>
+					</div><input id="ajaxForm:gid" type="hidden" name="ajaxForm:gid" value="4zkQhUXoHCfHZ6Oz1uWCJsECch097LJxpU-w4j4jlt/oUlKi">
+
+					<script type="text/javascript">
+                        //<![CDATA[
+                        if('' == document.getElementById("ajaxForm:nom").value) {
+	                        var xmlhttp1;
+	                        if(window.XMLHttpRequest) {
+	                                xmlhttp1 = new XMLHttpRequest();
+	                        } else {
+	                                xmlhttp1 = new ActiveXObject('Microsoft.XMLHTTP');
+	                        }
+	                        xmlhttp1.onreadystatechange = function() {
+	                                if(xmlhttp1.readyState == 4 && xmlhttp1.status == 200 && xmlhttp1.responseText != '') {
+	                                		var datosPer = xmlhttp1.responseText.split(";");
+	                                		document.getElementById('nombre').innerHTML = '<p class="bolder font-size-15 margin-0 uppercase">' + datosPer[1] + '</p>';
+	                                        document.getElementById('cuil').innerHTML = '<p class="font-size-13 margin-0 uppercase gris">' + datosPer[0] + '</p>';
+	                                        if(datosPer[2] != null && datosPer[2] != "" && datosPer[2] != 'null') {
+	                                        	document.getElementById('tipoContribuyente').innerHTML = '<p class="font-size-11 margin-0 uppercase gris">Tipo contribuyente: ' + datosPer[2] + '</p>';
+	                                        } else {
+	                                        	document.getElementById('tipoContribuyente').style = "display:none";
+		                                    }
+	                                }
+	                        };
+	                        xmlhttp1.open('GET', '/sua-contribuyente-rest/rest/servicios/desktop/getDatos', true);
+	                        xmlhttp1.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	                        xmlhttp1.setRequestHeader("gid", document.getElementById('ajaxForm:gid').value);
+	                        xmlhttp1.send();
+                        }
+                        //]]>
+	                </script><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="3046230952605507281:8737867996522494740" autocomplete="off">
+</form>
+			</div>
+		</div>
+	</div>
+
+	<div id="cabecera" class="relative marginBottom-0" style="background: url(images/cabecera.jpg) center center no-repeat #000;">
+		<div class="absolute" style="top: 0; bottom: 0; width: 100%;">
+			<div style="height: 100%;" class="container">
+				<div class="tableCenter">
+					<div class="dos tableCentered negro">
+						<span>Clave FIscal</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tituloPrint">
+		<span>Clave FIscal</span>
+	</div>
+<form id="j_idt57" name="j_idt57" method="post" action="/contribuyente_/menu.xhtml" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="j_idt57" value="j_idt57">
+
+			<div id="menuContainer2">
+				<div class="container">
+					<div id="cssmenu"><div id="menu-button">&nbsp;</div>
+						<ul class="floatRight">
+							<li><a href="https://www.afip.gob.ar/cf/" target="_blank">Ayuda</a></li>
+							<li>
+		<script type="text/javascript" src="/contribuyente_/javax.faces.resource/jsf.js.xhtml?ln=javax.faces">
+			
+		</script>
+<a href="#" onclick="mojarra.jsfcljs(document.getElementById('j_idt57'),{'j_idt57:j_idt62':'j_idt57:j_idt62'},'');return false">Cambiar clave</a></li>
+							<li><a href="#" onclick="mojarra.jsfcljs(document.getElementById('j_idt57'),{'j_idt57:j_idt66':'j_idt57:j_idt66'},'');return false">Cerrar sesión</a></li>
+						</ul>
+					</div>
+				</div>
+			</div><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="3046230952605507281:8737867996522494740" autocomplete="off">
+</form>
+
+		<div id="contenido">
+			<div class="container">
+				<div class="contenido">
+					<div class="separadorBlanco"></div>
+					<div class="units-row">
+						<div class="unit-100">
+		<form id="j_idt73" name="j_idt73" method="post" action="/contribuyente_/menu.xhtml" enctype="application/x-www-form-urlencoded" target="">
+		<input type="hidden" name="j_idt73" value="j_idt73">
+
+								<div class="units-row">
+									<div class="unit-35">
+										<div class="menuRecuadro padding-25 shadow-1">
+											<h5 class="arrowOrange">Servicios Administrativos</h5>
+											<p class="font-size-14">Estos servicios son de uso
+												exclusivamente administrativos con Clave Fiscal</p>
+											<ul class="arrowNaranja2 marginLeft-20">
+
+													<li class="marginTop-10"><a href="#" onclick="mojarra.jsfcljs(document.getElementById('j_idt73'),{'j_idt73:j_idt75:0:j_idt78':'j_idt73:j_idt75:0:j_idt78','serviceName':'datosbiometricos','userId':'20083621940'},'_blank');return false">
+															<p class="naranja bold font-size-14">Aceptación de Datos Biométricos
+															</p></a>
+														<p>Aceptación de Datos Biométricos
+														</p></li>
+
+													<li class="marginTop-10"><a href="#" onclick="mojarra.jsfcljs(document.getElementById('j_idt73'),{'j_idt73:j_idt75:1:j_idt78':'j_idt73:j_idt75:1:j_idt78','serviceName':'abmdj','userId':'20083621940'},'_blank');return false">
+															<p class="naranja bold font-size-14">Aceptación de Designación
+															</p></a>
+														<p>Acepte aquí la delegaciones que otras personas le hayan realizado
+														</p></li>
+
+													<li class="marginTop-10"><a href="#" onclick="mojarra.jsfcljs(document.getElementById('j_idt73'),{'j_idt73:j_idt75:2:j_idt78':'j_idt73:j_idt75:2:j_idt78','serviceName':'adminrel','userId':'20083621940'},'_blank');return false">
+															<p class="naranja bold font-size-14">Administrador de Relaciones de Clave Fiscal
+															</p></a>
+														<p>Modificación del Perfil. Alta de servicios. Incorporación y Revocación de Relaciones
+														</p></li>
+
+													<li class="marginTop-10"><a href="#" onclick="mojarra.jsfcljs(document.getElementById('j_idt73'),{'j_idt73:j_idt75:3:j_idt78':'j_idt73:j_idt75:3:j_idt78','serviceName':'dfe_web','userId':'20083621940'},'_blank');return false">
+															<p class="naranja bold font-size-14">Domicilio Fiscal Electrónico
+															</p></a>
+														<p>Adhesión / Revocación del Domicilio Fiscal Electrónico
+														</p></li>
+
+													<li class="marginTop-10"><a href="#" onclick="mojarra.jsfcljs(document.getElementById('j_idt73'),{'j_idt73:j_idt75:4:j_idt78':'j_idt73:j_idt75:4:j_idt78','serviceName':'poderes','userId':'20083621940'},'_blank');return false">
+															<p class="naranja bold font-size-14">Gestión de Autorizaciones Electrónicas
+															</p></a>
+														<p>Gestión de Autorizaciones Electrónicas
+														</p></li>
+
+													<li class="marginTop-10"><a href="#" onclick="mojarra.jsfcljs(document.getElementById('j_idt73'),{'j_idt73:j_idt75:5:j_idt78':'j_idt73:j_idt75:5:j_idt78','serviceName':'portal','userId':'20083621940'},'_blank');return false">
+															<p class="naranja bold font-size-14">Turnos Web
+															</p></a>
+														<p>Gestión de Turnos en Dependencias
+														</p></li>
+
+													<li class="marginTop-10"><a href="#" onclick="mojarra.jsfcljs(document.getElementById('j_idt73'),{'j_idt73:j_idt75:6:j_idt78':'j_idt73:j_idt75:6:j_idt78','serviceName':'e-ventanilla','userId':'20083621940'},'_blank');return false">
+															<p class="naranja bold font-size-14">e-Ventanilla
+															</p></a>
+														<p>Acceda a su ventanilla de comunicaciones electrónicas. Ahora es más fácil comunicarnos.
+														</p></li>
+
+											</ul>
+										</div>
+									</div>
+
+									<div class="unit-65 ">
+										<h5 class="arrowBlue  marginTop-25">Servicios Habilitados</h5>
+										<div class="separadorBlancoSimple"></div>
+										<div class="units-row">
+											<div class="unit-50">
+												<ul class="arrowCeleste2 marginLeft-20">
+															<li class="marginTop-10"><a href="#" onclick="mojarra.jsfcljs(document.getElementById('j_idt73'),{'j_idt73:j_idt93:0:j_idt98':'j_idt73:j_idt93:0:j_idt98','serviceName':'siap_web_f762','userId':'20083621940'},'_blank');return false">
+																	<p class="azul bold font-size-14">Bienes Personales Web
+																	</p></a>
+																<p>Presentación de la declaración jurada de bienes personales mediante servicio Web
+																</p></li>
+															<li class="marginTop-10"><a href="#" onclick="mojarra.jsfcljs(document.getElementById('j_idt73'),{'j_idt73:j_idt93:2:j_idt98':'j_idt73:j_idt93:2:j_idt98','serviceName':'cgpf','userId':'20083621940'},'_blank');return false">
+																	<p class="azul bold font-size-14">Nuestra Parte
+																	</p></a>
+																<p>Nuestros datos, Tu información
+																</p></li>
+															<li class="marginTop-10"><a href="#" onclick="mojarra.jsfcljs(document.getElementById('j_idt73'),{'j_idt73:j_idt93:4:j_idt98':'j_idt73:j_idt93:4:j_idt98','serviceName':'curriculum','userId':'20083621940'},'_blank');return false">
+																	<p class="azul bold font-size-14">ASPA - Aplicación para Selección de Personal AFIP
+																	</p></a>
+																<p>Carga de Currículum Vitae en AFIP
+																</p></li>
+															<li class="marginTop-10"><a href="#" onclick="mojarra.jsfcljs(document.getElementById('j_idt73'),{'j_idt73:j_idt93:6:j_idt98':'j_idt73:j_idt93:6:j_idt98','serviceName':'mis_aportes','userId':'20083621940'},'_blank');return false">
+																	<p class="azul bold font-size-14">Aportes en línea
+																	</p></a>
+																<p>Consulta de la situación personal en la seguridad social (previsional, obra social, riesgo del trabajo) respecto al destino de los aportes y las contribuciones sobre el salario
+																</p></li>
+															<li class="marginTop-10"><a href="#" onclick="mojarra.jsfcljs(document.getElementById('j_idt73'),{'j_idt73:j_idt93:8:j_idt98':'j_idt73:j_idt93:8:j_idt98','serviceName':'ccam','userId':'20083621940'},'_blank');return false">
+																	<p class="azul bold font-size-14">CCMA - CUENTA CORRIENTE DE CONTRIBUYENTES MONOTRIBUTISTAS Y AUTONOMOS
+																	</p></a>
+																<p>Exhibe información de Monotributistas y Autónomos detallando mensualmente pagos, obligaciones, saldos e intereses por período del contribuyente.
+																</p></li>
+															<li class="marginTop-10"><a href="#" onclick="mojarra.jsfcljs(document.getElementById('j_idt73'),{'j_idt73:j_idt93:10:j_idt98':'j_idt73:j_idt93:10:j_idt98','serviceName':'rcel_simulador','userId':'20083621940'},'_blank');return false">
+																	<p class="azul bold font-size-14">Comprobantes en línea - Simulador
+																	</p></a>
+																<p>Emisión de comprobantes electrónicos en línea
+																</p></li>
+															<li class="marginTop-10"><a href="#" onclick="mojarra.jsfcljs(document.getElementById('j_idt73'),{'j_idt73:j_idt93:12:j_idt98':'j_idt73:j_idt93:12:j_idt98','serviceName':'comarb_sircreb_contrib','userId':'20083621940'},'_blank');return false">
+																	<p class="azul bold font-size-14">Convenio Multilateral - SIRCREB - Contribuyentes
+																	</p></a>
+																<p>SIRCREB - Módulo Contribuyentes - Comisión Arbitral del Convenio Multilateral
+																</p></li>
+															<li class="marginTop-10"><a href="#" onclick="mojarra.jsfcljs(document.getElementById('j_idt73'),{'j_idt73:j_idt93:14:j_idt98':'j_idt73:j_idt93:14:j_idt98','serviceName':'registracbu','userId':'20083621940'},'_blank');return false">
+																	<p class="azul bold font-size-14">Declaración de CBU
+																	</p></a>
+																<p>Declaración de CBU
+																</p></li>
+															<li class="marginTop-10"><a href="#" onclick="mojarra.jsfcljs(document.getElementById('j_idt73'),{'j_idt73:j_idt93:16:j_idt98':'j_idt73:j_idt93:16:j_idt98','serviceName':'desim_epi','userId':'20083621940'},'_blank');return false">
+																	<p class="azul bold font-size-14">Envíos Postales Internacionales
+																	</p></a>
+																<p>Declaración simplificada de envíos postales internacionales
+																</p></li>
+															<li class="marginTop-10"><a href="#" onclick="mojarra.jsfcljs(document.getElementById('j_idt73'),{'j_idt73:j_idt93:18:j_idt98':'j_idt73:j_idt93:18:j_idt98','serviceName':'f960_solicitud','userId':'20083621940'},'_blank');return false">
+																	<p class="azul bold font-size-14">Formulario 960 D
+																	</p></a>
+																<p>Solicitud y Generación del Formulario 960
+																</p></li>
+															<li class="marginTop-10"><a href="#" onclick="mojarra.jsfcljs(document.getElementById('j_idt73'),{'j_idt73:j_idt93:20:j_idt98':'j_idt73:j_idt93:20:j_idt98','serviceName':'imex_gestion','userId':'20083621940'},'_blank');return false">
+																	<p class="azul bold font-size-14">Gestión de Importadores y Exportadores
+																	</p></a>
+																<p>Gestión de Importadores y Exportadores
+																</p></li>
+															<li class="marginTop-10"><a href="#" onclick="mojarra.jsfcljs(document.getElementById('j_idt73'),{'j_idt73:j_idt93:22:j_idt98':'j_idt73:j_idt93:22:j_idt98','serviceName':'misfacilidades','userId':'20083621940'},'_blank');return false">
+																	<p class="azul bold font-size-14">Mis Facilidades
+																	</p></a>
+																<p>Planes de facilidades
+																</p></li>
+															<li class="marginTop-10"><a href="#" onclick="mojarra.jsfcljs(document.getElementById('j_idt73'),{'j_idt73:j_idt93:24:j_idt98':'j_idt73:j_idt93:24:j_idt98','serviceName':'admin_mono','userId':'20083621940'},'_blank');return false">
+																	<p class="azul bold font-size-14">Monotributo
+																	</p></a>
+																<p>Adhesión y/o empadronamiento al monotributo, modificación de datos e ingreso de claves de confirmación
+																</p></li>
+															<li class="marginTop-10"><a href="#" onclick="mojarra.jsfcljs(document.getElementById('j_idt73'),{'j_idt73:j_idt93:26:j_idt98':'j_idt73:j_idt93:26:j_idt98','serviceName':'setidj','userId':'20083621940'},'_blank');return false">
+																	<p class="azul bold font-size-14">Presentación de DDJJ y Pagos
+																	</p></a>
+																<p>Presentaciones de declaraciones juradas y pagos por medio de transferencia electrónica de datos
+																</p></li>
+															<li class="marginTop-10"><a href="#" onclick="mojarra.jsfcljs(document.getElementById('j_idt73'),{'j_idt73:j_idt93:28:j_idt98':'j_idt73:j_idt93:28:j_idt98','serviceName':'sicam','userId':'20083621940'},'_blank');return false">
+																	<p class="azul bold font-size-14">SICAM - Sistema de Información para Contribuyentes Autónomos y Monotributistas
+																	</p></a>
+																<p>Obtención del libre deuda previsional de autónomos o monotributistas, o presentación  de un Plan de Facilidades de pago AFIP le da una mano
+																</p></li>
+															<li class="marginTop-10"><a href="#" onclick="mojarra.jsfcljs(document.getElementById('j_idt73'),{'j_idt73:j_idt93:30:j_idt98':'j_idt73:j_idt93:30:j_idt98','serviceName':'regespcontribuyente','userId':'20083621940'},'_blank');return false">
+																	<p class="azul bold font-size-14">Simplificación Registral - Registros Especiales de Seguridad Social
+																	</p></a>
+																<p>Registros Especiales de la Seguridad Social
+																</p></li>
+															<li class="marginTop-10"><a href="#" onclick="mojarra.jsfcljs(document.getElementById('j_idt73'),{'j_idt73:j_idt93:32:j_idt98':'j_idt73:j_idt93:32:j_idt98','serviceName':'padron-puc-consulta-internet','userId':'20083621940'},'_blank');return false">
+																	<p class="azul bold font-size-14">Sistema registral
+																	</p></a>
+																<p>Altas bajas y modif. en materia Aduanera/Impositiva/Previsional. Reg Especial Aduanero
+																</p></li>
+															<li class="marginTop-10"><a href="#" onclick="mojarra.jsfcljs(document.getElementById('j_idt73'),{'j_idt73:j_idt93:34:j_idt98':'j_idt73:j_idt93:34:j_idt98','serviceName':'ceta','userId':'20083621940'},'_blank');return false">
+																	<p class="azul bold font-size-14">Transferencia de bienes Muebles registrables
+																	</p></a>
+																<p>Certificado de Transferencia de Automotores y/o Aeronaves
+																</p></li>
+
+												</ul>
+											</div>
+
+											<div class="unit-50">
+												<ul class="arrowAzul2 marginLeft-20">
+															<li class="marginTop-10"><a href="#" onclick="mojarra.jsfcljs(document.getElementById('j_idt73'),{'j_idt73:j_idt110:1:j_idt115':'j_idt73:j_idt110:1:j_idt115','serviceName':'sincerof2009','userId':'20083621940'},'_blank');return false">
+																	<p class="azul bold font-size-14">Ley 27.260 - Declaración voluntaria y excepcional de bienes en el país y en el exterior
+																	</p></a>
+																<p>Sistema voluntario y excepcional de declaración de bienes en el país y en el exterior
+																</p></li>
+															<li class="marginTop-10"><a href="#" onclick="mojarra.jsfcljs(document.getElementById('j_idt73'),{'j_idt73:j_idt110:3:j_idt115':'j_idt73:j_idt110:3:j_idt115','serviceName':'gcba_ccuno','userId':'20083621940'},'_blank');return false">
+																	<p class="azul bold font-size-14">AGIP Administración Gubernamental de Ingresos  Públicos - Clave Ciudad Nivel 2
+																	</p></a>
+																<p>Acceda a la Clave Ciudad del Gobierno de la Ciudad
+																</p></li>
+															<li class="marginTop-10"><a href="#" onclick="mojarra.jsfcljs(document.getElementById('j_idt73'),{'j_idt73:j_idt110:5:j_idt115':'j_idt73:j_idt110:5:j_idt115','serviceName':'pvel','userId':'20083621940'},'_blank');return false">
+																	<p class="azul bold font-size-14">Administración de puntos de venta y domicilios
+																	</p></a>
+																<p>Administración de puntos de venta y domicilios
+																</p></li>
+															<li class="marginTop-10"><a href="#" onclick="mojarra.jsfcljs(document.getElementById('j_idt73'),{'j_idt73:j_idt110:7:j_idt115':'j_idt73:j_idt110:7:j_idt115','serviceName':'nfact','userId':'20083621940'},'_blank');return false">
+																	<p class="azul bold font-size-14">Autorización de Impresión de Comprobantes
+																	</p></a>
+																<p>Autorización de Impresión de Comprobantes
+																</p></li>
+															<li class="marginTop-10"><a href="#" onclick="mojarra.jsfcljs(document.getElementById('j_idt73'),{'j_idt73:j_idt110:9:j_idt115':'j_idt73:j_idt110:9:j_idt115','serviceName':'rcel','userId':'20083621940'},'_blank');return false">
+																	<p class="azul bold font-size-14">Comprobantes en línea
+																	</p></a>
+																<p>Sistema de emisión de comprobantes electrónicos
+																</p></li>
+															<li class="marginTop-10"><a href="#" onclick="mojarra.jsfcljs(document.getElementById('j_idt73'),{'j_idt73:j_idt110:11:j_idt115':'j_idt73:j_idt110:11:j_idt115','serviceName':'comarb_padronweb','userId':'20083621940'},'_blank');return false">
+																	<p class="azul bold font-size-14">Convenio Multilateral - Padrón Web
+																	</p></a>
+																<p>Padrón Único de Contribuyentes - Comisión Arbitral del Convenio Multilateral
+																</p></li>
+															<li class="marginTop-10"><a href="#" onclick="mojarra.jsfcljs(document.getElementById('j_idt73'),{'j_idt73:j_idt110:13:j_idt115':'j_idt73:j_idt110:13:j_idt115','serviceName':'ricnr','userId':'20083621940'},'_blank');return false">
+																	<p class="azul bold font-size-14">Declaración Jurada informativa conceptos no remunerativos (DJNR) RG 3279
+																	</p></a>
+																<p>Seguridad Social. Nuevo Régimen de Información. Conceptos no remunerativos.
+																</p></li>
+															<li class="marginTop-10"><a href="#" onclick="mojarra.jsfcljs(document.getElementById('j_idt73'),{'j_idt73:j_idt110:15:j_idt115':'j_idt73:j_idt110:15:j_idt115','serviceName':'sudeclaracion','userId':'20083621940'},'_blank');return false">
+																	<p class="azul bold font-size-14">Declaración en línea
+																	</p></a>
+																<p>Confección automática del F931 SIJP, para empleadores que registren hasta 100 empleados, con información existente
+																</p></li>
+															<li class="marginTop-10"><a href="#" onclick="mojarra.jsfcljs(document.getElementById('j_idt73'),{'j_idt73:j_idt110:17:j_idt115':'j_idt73:j_idt110:17:j_idt115','serviceName':'ivr','userId':'20083621940'},'_blank');return false">
+																	<p class="azul bold font-size-14">Fiscalización Electrónica
+																	</p></a>
+																<p>Fiscalización Electrónica
+																</p></li>
+															<li class="marginTop-10"><a href="#" onclick="mojarra.jsfcljs(document.getElementById('j_idt73'),{'j_idt73:j_idt110:19:j_idt115':'j_idt73:j_idt110:19:j_idt115','serviceName':'gpf','userId':'20083621940'},'_blank');return false">
+																	<p class="azul bold font-size-14">Ganancias Personas Humanas - WEB
+																	</p></a>
+																<p>Liquidación del Impuesto a las ganancias de 4° categoria para el período 2016
+																</p></li>
+															<li class="marginTop-10"><a href="#" onclick="mojarra.jsfcljs(document.getElementById('j_idt73'),{'j_idt73:j_idt110:21:j_idt115':'j_idt73:j_idt110:21:j_idt115','serviceName':'anses_csweb','userId':'20083621940'},'_blank');return false">
+																	<p class="azul bold font-size-14">Mi Certificación - ANSeS
+																	</p></a>
+																<p>Aplicacion por la cual los empleadores pueden generar la certificacion de servicios y remuneraciones de su personal
+																</p></li>
+															<li class="marginTop-10"><a href="#" onclick="mojarra.jsfcljs(document.getElementById('j_idt73'),{'j_idt73:j_idt110:23:j_idt115':'j_idt73:j_idt110:23:j_idt115','serviceName':'mis_retenciones','userId':'20083621940'},'_blank');return false">
+																	<p class="azul bold font-size-14">Mis Retenciones
+																	</p></a>
+																<p>Mis Retenciones / Percepciones
+																</p></li>
+															<li class="marginTop-10"><a href="#" onclick="mojarra.jsfcljs(document.getElementById('j_idt73'),{'j_idt73:j_idt110:25:j_idt115':'j_idt73:j_idt110:25:j_idt115','serviceName':'regdomestico','userId':'20083621940'},'_blank');return false">
+																	<p class="azul bold font-size-14">Personal de Casas Particulares
+																	</p></a>
+																<p>Simplificación Registral - Registros Especiales de Seguridad Social
+																</p></li>
+															<li class="marginTop-10"><a href="#" onclick="mojarra.jsfcljs(document.getElementById('j_idt73'),{'j_idt73:j_idt110:27:j_idt115':'j_idt73:j_idt110:27:j_idt115','serviceName':'planes','userId':'20083621940'},'_blank');return false">
+																	<p class="azul bold font-size-14">Rafa Impositivo
+																	</p></a>
+																<p>Consulta del detalle de los planes de facilidades de pago RAFA Impositivos presentados
+																</p></li>
+															<li class="marginTop-10"><a href="#" onclick="mojarra.jsfcljs(document.getElementById('j_idt73'),{'j_idt73:j_idt110:29:j_idt115':'j_idt73:j_idt110:29:j_idt115','serviceName':'abt_contribuyente','userId':'20083621940'},'_blank');return false">
+																	<p class="azul bold font-size-14">Simplificación Registral - Empleadores
+																	</p></a>
+																<p>Aplicación mediante la cual los empleadores deben comunicar las Novedades de  Altas y Bajas de su personal, anular inicios o ceses anticipados, corregir datos erróneos asó como los vinculos familiares de los dependientes.
+																</p></li>
+															<li class="marginTop-10"><a href="#" onclick="mojarra.jsfcljs(document.getElementById('j_idt73'),{'j_idt73:j_idt110:31:j_idt115':'j_idt73:j_idt110:31:j_idt115','serviceName':'cuenta_corriente_contrib','userId':'20083621940'},'_blank');return false">
+																	<p class="azul bold font-size-14">Sistema de Cuentas Tributarias
+																	</p></a>
+																<p>Información y control de obligaciones fiscales
+																</p></li>
+															<li class="marginTop-10"><a href="#" onclick="mojarra.jsfcljs(document.getElementById('j_idt73'),{'j_idt73:j_idt110:33:j_idt115':'j_idt73:j_idt110:33:j_idt115','serviceName':'treb_contribuyente','userId':'20083621940'},'_blank');return false">
+																	<p class="azul bold font-size-14">Trabajo en Blanco
+																	</p></a>
+																<p>Consulta de relaciones laborales y generación de CDIL
+																</p></li>
+															<li class="marginTop-10"><a href="#" onclick="mojarra.jsfcljs(document.getElementById('j_idt73'),{'j_idt73:j_idt110:35:j_idt115':'j_idt73:j_idt110:35:j_idt115','serviceName':'srt_eservicios','userId':'20083621940'},'_blank');return false">
+																	<p class="azul bold font-size-14">e-Servicios SRT
+																	</p></a>
+																<p>Sistema de Ventanilla Electronica
+																</p></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="3046230952605507281:8737867996522494740" autocomplete="off">
+</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<style>
+
+		
+		.ir-arriba {
+			display: none;
+			background: rgb(0, 114, 188);
+			cursor: pointer;
+			position: fixed;
+			bottom: 20px;
+			right: 20px;
+			background-image: url(images/flechaUP.png);
+			width: 40px;
+			height: 40px;
+			z-index: 1000;
+		}
+</style>
+
+		<script>
+			$(document).ready(function(){
+			
+				$('.ir-arriba').click(function(){
+					$('body, html').animate({
+						scrollTop: '0px'
+					}, 300);
+				});
+			
+				$(window).scroll(function(){
+					if( $(this).scrollTop() > 0 ){
+						$('.ir-arriba').slideDown(300);
+					} else {
+						$('.ir-arriba').slideUp(300);
+					}
+				});
+			
+			});
+		</script>
+
+		<span class="ir-arriba icon-arrow-up2" style="display: inline-block;"></span>
+
+	<div id="AvisoIE7">
+		<div style="background: #fff; padding: 25px 0 20px; border-bottom: 1px dashed #ccc;">
+			<img src="images/afip.png" alt="IE7 Logo">
+		</div>
+		<div id="AvisoIE7txt">
+			<p class="avisoTexto">
+				<img src="images/advertencia.png" alt="Advertencia"> Su navegador
+				Internet Explorer esta desactualizado.
+			</p>
+			<p class="download">
+				Para informarse y conseguir una versión compatible (<img src="images/IE7logo.png" alt="IE7 Logo"> <strong>Internet
+					Explorer 8 o superior</strong>) haga <a href="http://www.microsoft.com/es-ar/download/internet-explorer-8-details.aspx">click
+					aquí</a>.
+			</p>
+		</div>
+	</div>
+</body>
+
+
+</html>

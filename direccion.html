@@ -1,0 +1,343 @@
+
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=IE8">
+		<!-- Para evitar que el iPad interprete CUITs y CUILs como números telefónicos: -->
+		<meta name="format-detection" content="telephone=no">
+		<!-- Para no desperdiciar espacio en los costados en iPad/iPhone/Android: -->
+		<meta name="viewport" content="width=800">
+		<title>RCEL</title>
+		<!-- <link type="text/css" href="css/jquery-ui-1.11.4/jquery-ui.css" rel="stylesheet" /> -->
+		<link type="text/css" href="css/jquery-ui-1.11.4.custom/jquery-ui.css" rel="stylesheet" />
+		<!-- <link type="text/css" href="css/blitzer_jig/jquery-ui-1.8.15.custom.css" rel="stylesheet" /> -->
+		<link type="text/css" href="css/jquery.notice.css" rel="stylesheet" />
+		<link type="text/css" href="css/jquery.jBreadCrumb.css" rel="stylesheet" />
+		<link type="text/css" href="css/validationEngine.jquery.css" rel="stylesheet" />
+		<link type="text/css" href="css/jquery.notice.css" rel="stylesheet" />
+		<link type="text/css" href="css/jquery.jBreadCrumb.css" rel="stylesheet" />
+		<link type="text/css" href="css/validationEngine.jquery.css" rel="stylesheet" />
+	<!--[if !IE]><!-->
+		<link type="text/css" href="css/jig_old.css" rel="stylesheet" />
+		<link type="text/css" href="css/jig.css?v=20151216" rel="stylesheet" />
+	<!--<![endif]-->
+	<!--[if gte IE 9]>
+		<link type="text/css" href="css/jig_old_ie_9.css?v=20151216" rel="stylesheet" />
+		<link type="text/css" href="css/jig_ie_9.css?v=20151216" rel="stylesheet" />
+	<![endif]-->
+	<!--[if lt IE 9]>
+		<link type="text/css" href="css/jig_old_ie_6_8.css?v=20151216" rel="stylesheet" />
+		<link type="text/css" href="css/jig_ie_6_8.css?v=20151216" rel="stylesheet" />
+	<![endif]-->
+		<style type="text/css">@import url(scripts/calendar/calendar-blue2.css);</style>
+		<script type="text/javascript" src="scripts/calendar/calendar.js"></script>
+		<script type="text/javascript" src="scripts/calendar/calendar-es.js"></script>
+		<script type="text/javascript" src="scripts/calendar/calendar-setup.js"></script>
+
+		<script type="text/javascript" src="js/logout.js"></script>
+		<script type="text/javascript" src="js/jquery-1.12.2.min.js"></script>
+		<script type="text/javascript" src="js/jquery-migrate-1.3.0.min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui-1.11.4.min.js"></script>
+		<script type="text/javascript" src="js/jquery.ui.datepicker-es.js"></script>
+		<script type="text/javascript" src="js/jquery.tablesorter.js"></script>
+		<script type="text/javascript" src="js/jquery.notice.js"></script>
+		<script type="text/javascript" src="js/jquery.cookie.js"></script>
+		<script type="text/javascript" src="js/jquery.validationEngine.js" charset="utf-8"></script>
+		<script type="text/javascript" src="js/jquery.validationEngine-es-jig.js" charset="utf-8"></script>
+		<script type="text/javascript" src="js/jquery.form.js"></script>
+		
+<!-- Head específico (inicio) -->
+
+<!-- Head específico (fin) -->
+	</head>
+	<body>
+		<div id="encabezado" style="background-position:560px -5px;background-repeat:no-repeat;">
+			<!-- <div id="encabezado_logo_afip">
+			<img src="imagenes/logoafipsmall2.png" /> -->
+			</div><div id="encabezado_salir">
+			<a href="#" onclick="salirAplicacion('/rcel');">Salir</a></div>
+			
+			<!-- <table id="encabezado_usuario_container">
+				<tr>
+					<td>
+						<table id="encabezado_usuario">
+							<tr><th>Usuario<span>:</span></th><td>20083621940 - BENZACAR EDUARDO ALBERTO</td></tr>
+							<tr><th>Representando a<span>:</span></th><td>30708662190 - EDILU SRL</td></tr>
+							<tr><th>Dependencia<span>:</span></th><td>AGENCIA NRO 2</td></tr>
+						</table>
+					</td>
+				</tr>
+			</table> -->
+			
+		</div>
+		<div id="contenido">
+<!-- Contenido (inicio) -->
+
+<script type="text/javascript">
+		var descripcionTC = new Array();
+		var descripcionPV = new Array();
+		var codigoSistemaPtoVta = new Array();
+		descripcionPV[0] = "";
+		codigoSistemaPtoVta[0]="";
+
+		descripcionPV[1] = "Factura en Linea - Responsable Inscripto";
+		codigoSistemaPtoVta[1] = "RLI";
+
+function actualizarDescripcionPVConDelay(indice)
+{
+	if (document.getElementById('desc_pto_vta').innerHTML == "")
+		actualizarDescripcionPV(indice);
+	else // Para que el usuario note que se actualizó incluso cuando la descripción sea la misma
+	{
+		document.getElementById('desc_pto_vta').innerHTML = "";
+		setTimeout("actualizarDescripcionPV("+indice+")",350);
+	}
+}
+
+function actualizarDescripcionPV(indice)
+{
+	document.getElementById('desc_pto_vta').innerHTML = descripcionPV[indice];
+	document.getElementById('cod_sis_pto_vta').value = codigoSistemaPtoVta[indice];
+	
+	if (descripcionPV[indice] == "")
+		document.getElementById("desc_pto_vta").style.display = "none";
+	else
+		document.getElementById("desc_pto_vta").style.display = "block";
+}
+
+function actualizarDescripcionTC(indice)
+{
+	//alert("actualizarDescripcionTC("+indice+")");
+	document.getElementById('desc_tipo_comp').innerHTML = descripcionTC[indice];
+	
+	if (descripcionTC[indice] == "")
+		document.getElementById("desc_tipo_comp").style.display = "none";
+	else
+		document.getElementById("desc_tipo_comp").style.display = "block";
+}
+
+function validarCampos()
+{
+	if (validarCamposObligatorios())
+		/*if (validarCamposValores())*/
+			document.puntoVentasForm.submit();
+}
+
+function validarCamposObligatorios()
+{
+	var camposFaltantes = "";
+	
+	camposFaltantes += registrarSiNulo("puntodeventa","","Punto de Ventas");
+	camposFaltantes += registrarSiNulo("universocomprobante","","Tipo de Comprobante");
+	
+	if (camposFaltantes == "")
+		return true;
+	else
+	{
+		alert("Los siguientes campos son obligatorios:\n\n"+camposFaltantes);
+		return false;
+	}
+}
+
+function registrarSiNulo(campo,valorNulo,descripcionError)
+{
+	if (document.getElementById(campo).value == valorNulo)
+	{
+		document.getElementById(campo).className = "jig_error";
+		return "* "+descripcionError+"\n";
+	}
+	else
+	{
+		document.getElementById(campo).className = "";
+		return "";
+	}
+}
+
+function ajaxFunction()
+{
+	var xmlHttp;
+	try { // Safari, Firefox, Opera, etc.
+		xmlHttp=new XMLHttpRequest();
+	}
+	catch (e) { // Internet Explorer
+		try {
+			xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
+		}
+		catch (e) {
+			try {
+				xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			catch (e) {
+				alert("El browser utilizado no soporta AJAX!");
+				return false;
+			}
+		}
+	}
+	xmlHttp.onreadystatechange=function() {
+		if (xmlHttp.readyState==4) {
+			var resultado = xmlHttp.responseText;
+			
+			//alert(resultado);
+			var componentesResultado = resultado.split("#%#");
+			var estado = componentesResultado[0];
+			document.getElementById("desc_tipo_comp").value = "";
+			if (estado == "ERROR")
+			{
+				alert(componentesResultado[1]);
+				borrarOpciones("universocomprobante");
+			}
+			else
+			{
+				if (componentesResultado.length > 1)
+				{
+					var universos = new Array(componentesResultado.length - 1);
+					for (var i=1;i<componentesResultado.length;i++)
+						universos[i-1] = componentesResultado[i];
+				
+					agregarOpcionesTiposComprobantes(universos);
+				}
+			}
+			actualizarDescripcionTC(0);
+			setTimeout("mostrarProgreso(false)",250);
+		}
+	}
+	if (document.getElementById("puntodeventa").value != "")
+	{
+		mostrarProgreso(true);
+		xmlHttp.open("GET","ajax.do?f=tiposcomp&pv="+document.getElementById("puntodeventa").value,true);
+		xmlHttp.send(null);
+	}
+	else
+	{
+		document.getElementById("universocomprobante").value = "";
+		borrarOpciones("universocomprobante");
+		document.getElementById("desc_tipo_comp").style.display = "none";
+	}
+}
+
+function mostrarProgreso(mostrar)
+{
+	if (mostrar)
+		document.getElementById("recuperando_tipo_comp").style.display = "block";
+	else
+		document.getElementById("recuperando_tipo_comp").style.display = "none";
+}
+
+function borrarOpciones(objetoSelect)
+{
+	var combo = document.getElementById(objetoSelect);
+	while (combo.length > 0)
+		combo.remove(0);
+}
+
+function agregarOpcionesTiposComprobantes(listaTiposComprobantes)
+{
+	var combo = document.getElementById("universocomprobante");
+	var nuevoOption;
+	var itemLista;
+	
+	borrarOpciones("universocomprobante");
+	
+	for (var i=0;i<listaTiposComprobantes.length;i++)
+	{
+		nuevoOption = document.createElement("option");
+		itemLista = listaTiposComprobantes[i].split(",");
+		nuevoOption.value = itemLista[0];
+		nuevoOption.text = itemLista[1];
+		descripcionTC[i] = itemLista[2];
+		//alert(descripcionTC[i]);
+		try {
+			combo.add(nuevoOption, null);
+		} catch(e) {
+			combo.add(nuevoOption); // IE, mal como siempre
+		}
+	}
+}
+</script>
+
+
+<!-- <div class='jig_titulo_con_subtitulo'>RCEL - GENERACI&Oacute;N DE COMPROBANTES</div>
+<div class='jig_subtitulo'>Puntos de Ventas y Tipos de Comprobantes habilitados para impresión</div>
+<div class="jig_paso_proceso">
+<img src="imagenes/circulovacio.gif" />
+<img src="imagenes/circulolleno.gif" />
+<img src="imagenes/circulolleno.gif" />
+<img src="imagenes/circulolleno.gif" />
+<img src="imagenes/circulolleno.gif" />
+</div> -->
+
+<form name="puntoVentasForm" action="genComDatosEmisor.do" method="post" style="margin-top:0px;">
+	<div class="jig_borde">
+		<div class="jig_contenido">
+			<table class="jig_form">
+				<tr>
+					<th>Punto de Ventas a utilizar</th>
+					<td style="min-width:400px;">
+						<select name="puntoDeVenta" onchange="actualizarDescripcionPVConDelay(this.selectedIndex);ajaxFunction();" id="puntodeventa" id="puntodeventa">
+							<option value='' selected='selected' style='color:#888;' onclick="document.getElementById('desc_pto_vta').innerHTML='';">seleccionar...</option>
+							
+							<option value='2'>&nbsp;0002-Lamarca Emilio 4961 - Ciudad de Buenos Aires</option>
+							
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<th style="width:300px;padding-top:0px;"></th>
+					<td style="width:400px;">
+						<input type="hidden" name="codigoSistemaPtoVta" value='' id='cod_sis_pto_vta'></input>
+						<div id="desc_pto_vta" style="width:400px;margin-top:-4px;padding-left:5px;color:#136;display:none;" /></div>
+					</td>
+				</tr>
+				<tr>
+					<th>Tipo de Comprobante</th>
+					<td>
+						<div style="position:relative;">
+						<select name='universoComprobante' onchange="actualizarDescripcionTC(this.selectedIndex);" id="universocomprobante">
+							<option value='' selected='selected' style='color:#888;'>seleccionar...</option>
+						</select>
+						<div id="recuperando_tipo_comp" style="display:none;position:absolute;top:3px;left:130px;">
+						<img src="imagenes/progreso.gif" width="16px" height="16px" alt="Recuperando Tipos de Comprobantes correspondientes al Punto de Venta..." />
+						</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th style="width:300px;padding:0px;"></th>
+					<td>
+						<input type="hidden" name="leyenda" value='' id='leyenda'></input>
+						<div id="desc_tipo_comp" style="width:300px;margin-top:-4px;padding-left:5px;color:#136;display:none;" /></div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<br />
+
+	<input type="button" value="&lt; Volver" onclick="parent.history.back();" />&nbsp;<input type="button" value="Continuar &gt;" onclick="validarCampos();" />
+	<br /><br />
+</form>
+
+<!-- Contenido (fin) -->
+
+		</div>
+		<br />
+
+		<footer>
+				<div id="pie" align="center" style="width: 90%;">
+					<table>
+						<tbody>
+							<tr>
+								<td><b>EDILU S.R.L. Emilio Lamarca 4961, Capital Federal</b></td>
+									<td style="text-align:right;">Autenticado por: <b>R&B Design Web &copy; 2017 <br>
+									www.rbcreacionesweb.com</b>
+									</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+		</footer>
+	</body>
+</html>

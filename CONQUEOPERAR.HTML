@@ -1,0 +1,184 @@
+
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=IE8">
+		<!-- Para evitar que el iPad interprete CUITs y CUILs como números telefónicos: -->
+		<meta name="format-detection" content="telephone=no">
+		<!-- Para no desperdiciar espacio en los costados en iPad/iPhone/Android: -->
+		<meta name="viewport" content="width=800">
+		<title>RCEL</title>
+		<!-- <link type="text/css" href="css/jquery-ui-1.11.4/jquery-ui.css" rel="stylesheet" /> -->
+		<link type="text/css" href="css/jquery-ui-1.11.4.custom/jquery-ui.css" rel="stylesheet" />
+		<!-- <link type="text/css" href="css/blitzer_jig/jquery-ui-1.8.15.custom.css" rel="stylesheet" /> -->
+		<link type="text/css" href="css/jquery.notice.css" rel="stylesheet" />
+		<link type="text/css" href="css/jquery.jBreadCrumb.css" rel="stylesheet" />
+		<link type="text/css" href="css/validationEngine.jquery.css" rel="stylesheet" />
+		<link type="text/css" href="css/jquery.notice.css" rel="stylesheet" />
+		<link type="text/css" href="css/jquery.jBreadCrumb.css" rel="stylesheet" />
+		<link type="text/css" href="css/validationEngine.jquery.css" rel="stylesheet" />
+	<!--[if !IE]><!-->
+		<link type="text/css" href="css/jig_old.css" rel="stylesheet" />
+		<link type="text/css" href="css/jig.css?v=20151216" rel="stylesheet" />
+	<!--<![endif]-->
+	<!--[if gte IE 9]>
+		<link type="text/css" href="css/jig_old_ie_9.css?v=20151216" rel="stylesheet" />
+		<link type="text/css" href="css/jig_ie_9.css?v=20151216" rel="stylesheet" />
+	<![endif]-->
+	<!--[if lt IE 9]>
+		<link type="text/css" href="css/jig_old_ie_6_8.css?v=20151216" rel="stylesheet" />
+		<link type="text/css" href="css/jig_ie_6_8.css?v=20151216" rel="stylesheet" />
+	<![endif]-->
+		<style type="text/css">@import url(scripts/calendar/calendar-blue2.css);</style>
+		<script type="text/javascript" src="scripts/calendar/calendar.js"></script>
+		<script type="text/javascript" src="scripts/calendar/calendar-es.js"></script>
+		<script type="text/javascript" src="scripts/calendar/calendar-setup.js"></script>
+
+		<script type="text/javascript" src="js/logout.js"></script>
+		<script type="text/javascript" src="js/jquery-1.12.2.min.js"></script>
+		<script type="text/javascript" src="js/jquery-migrate-1.3.0.min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui-1.11.4.min.js"></script>
+		<script type="text/javascript" src="js/jquery.ui.datepicker-es.js"></script>
+		<script type="text/javascript" src="js/jquery.tablesorter.js"></script>
+		<script type="text/javascript" src="js/jquery.notice.js"></script>
+		<script type="text/javascript" src="js/jquery.cookie.js"></script>
+		<script type="text/javascript" src="js/jquery.validationEngine.js" charset="utf-8"></script>
+		<script type="text/javascript" src="js/jquery.validationEngine-es-jig.js" charset="utf-8"></script>
+		<script type="text/javascript" src="js/jquery.form.js"></script>
+		
+<!-- Head específico (inicio) -->
+
+<!-- Head específico (fin) -->
+	</head>
+	<body>
+		<div id="encabezado" style="background-image:url(imagenes/rcel_logo3small.png);background-position:560px -5px;background-repeat:no-repeat;">
+			<div id="encabezado_logo_afip"><img src="imagenes/logoafipsmall2.png" /></div><div id="encabezado_salir"><a href="#" onclick="salirAplicacion('/rcel');">Salir</a></div>
+			
+			<table id="encabezado_usuario_container">
+				<tr>
+					<td>
+						<table id="encabezado_usuario">
+							<tr><th>Usuario<span>:</span></th><td>20083621940 - BENZACAR EDUARDO ALBERTO</td></tr>
+							<tr><th>Representando a<span>:</span></th><td>30708662190 - EDILU SRL</td></tr>
+							<tr><th>Dependencia<span>:</span></th><td>AGENCIA NRO 2</td></tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			
+		</div>
+		<div id="contenido">
+<!-- Contenido (inicio) -->
+
+
+
+
+
+<script type="text/javascript">
+function mostrarElemento(e) {
+	document.getElementById(e).style.display = "inline";
+}
+
+function ocultarElemento(e) {
+	document.getElementById(e).style.display = "none";
+}
+
+function ocultarMostrarElemento(e) {
+	if (document.getElementById(e).style.display == "none")
+		mostrarElemento(e);
+	else
+		ocultarElemento(e);
+}
+
+var req;
+
+function load_token(idSistema) {
+	if (window.XMLHttpRequest) { // Non-IE browsers
+		req = new XMLHttpRequest();
+	} else if (window.ActiveXObject) { // IE
+		req = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+
+	//req.onreadystatechange = processStateChange();
+	if (req) {
+		req.onreadystatechange = function() {
+				if (req.readyState == 4) { // Complete
+					if (req.status == 200) { // OK response
+						document.getElementById("tokeninfo").innerHTML = req.responseText;
+						document.tokenForm.submit();
+					} else {
+						alert("Problem: " + req.statusText);
+					}
+				}
+			};
+		req.open("GET", "forwardToken.do?serviceDST="+idSistema, true);
+		req.send(null);
+	}
+}
+
+</script>
+<div class='jig_titulo'>RCEL - RÉGIMEN DE COMPROBANTES EN LÍNEA</div>
+<div style="width:100%;text-align:right;">
+<span style="margin-right:5px;font-size:10px;"><a href="javascript:void(0)" onclick="window.open('http://www.afip.gov.ar/fe/');return false;">Ayuda en Línea</a></span><br />
+<span style="margin-right:5px;font-size:10px;"><a href="javascript:void(0)" onclick="window.open('http://biblioteca.afip.gov.ar/');return false;">Consulta de Normativa</a></span>
+</div>
+<br />
+<table style="width:300px;margin-left:auto;margin-right:auto;padding:7px 0px 20px 0px;">
+	<tr><td><a href="buscarPtosVtas.do" id="btn_gen_cmp">Generar Comprobantes</a></td></tr>
+
+	<tr><td><a href="filtrarComprobantesGenerados.do" id="btn_consultas">Consultas</a></td></tr>
+	<tr><td><a href="altModDatosContribuyente.do" id="btn_datos_adicionales">Datos Adicionales del Comprobante</a></td></tr>
+	<tr><td><div style="width:240px;margin-left:25px;border-bottom:1px solid #EEE;"><!-- IE falla sin este comentario --></div></td></tr>
+	<tr><td><a href="#" id="btn_fwd_pvel" data-token="pvel">ABM Puntos de Ventas</a></td></tr>
+	<tr><td><a href="#" id="btn_fwd_lum" data-token="lum">Lechería - Liquidación Electrónica</a></td></tr>
+	<tr><td><a href="#" id="btn_fwd_ltv" data-token="ltv">Tabaco - Liquidación Electrónica</a></td></tr>
+	<tr><td><a href="#" id="btn_fwd_lsp" data-token="lsp">Hacienda y Carne - Liquidación Electrónica</a></td></tr>
+	
+
+
+</table>
+<div id="tokeninfo"></div>
+<script type="text/javascript">
+$(function(){
+/***************************************************************************/
+
+	$('#btn_gen_cmp').button({icons: {primary: "ui-icon-document",secondary: "ui-icon-triangle-1-e"}});
+	$('#btn_pre_cmp').button({icons: {primary: "ui-icon-search",secondary: "ui-icon-triangle-1-e"}});
+	$('#btn_consultas,#btn_mis_cmp').button({icons: {primary: "ui-icon-search",secondary: "ui-icon-triangle-1-e"}});
+	$('#btn_datos_adicionales').button({icons: {primary: "ui-icon-contact",secondary: "ui-icon-triangle-1-e"}});
+	$('#btn_fwd_pvel').button({icons: {primary: "ui-icon-newwin"}});
+	$('#btn_fwd_lum').button({icons: {primary: "ui-icon-newwin"}});
+	$('#btn_fwd_ltv').button({icons: {primary: "ui-icon-newwin"}});
+	$('#btn_fwd_lsp').button({icons: {primary: "ui-icon-newwin"}});
+	$('#btn_reg_info').button({icons: {primary: "ui-icon-note",secondary: "ui-icon-triangle-1-e"}});
+	$('#btn_facturador_plus').button({icons: {primary: "ui-icon-note",secondary: "ui-icon-triangle-1-e"}});
+
+	$('#btn_gen_cmp,#btn_pre_cmp,#btn_consultas,#btn_mis_cmp,#btn_datos_adicionales,#btn_fwd_pvel,#btn_fwd_lum,#btn_fwd_ltv,#btn_fwd_lsp,#btn_reg_info,#btn_facturador_plus').css({width:'250px','text-align':'left','padding-top':'5px','padding-bottom':'5px'});
+	
+	$('#btn_fwd_pvel,#btn_fwd_lum,#btn_fwd_ltv,#btn_fwd_lsp').on("click", function(){
+		load_token($(this).data("token"));
+	});
+
+	/***************************************************************************/
+});
+</script>
+<br />
+
+
+
+
+
+<!-- Contenido (fin) -->
+		</div>
+		<br />
+
+		<div id="pie">
+			<table>
+				<tr><td><b>Jueves, 2 de noviembre de 2017</b></td><td style="text-align:right;">Autenticado por: <b>ADMINISTRACION FEDERAL DE INGRESOS PUBLICOS</b></td></tr>
+			</table>
+		</div>
+	</body>
+</html>
